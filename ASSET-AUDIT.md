@@ -1,21 +1,21 @@
 # Asset audit
 
-## Audit limitation
+## Audit status
 
-The read-only `Lv7Levelz/parkway-fabrications` repository was not locally mounted. Attempts to access GitHub, the live Parkway website and the published mock-up on 27 September 2026 were blocked by the environment proxy (HTTP 403); the web integration returned 401. No reference asset was copied, altered or claimed as approved.
+The Parkway reference files supplied on this branch have been inventoried and connected to the preview. They remain reference/demo imagery rather than verified customer case-study evidence, so their captions do not claim a customer, outcome or unconfirmed sector relationship.
 
 | Asset | Original path | Current use | Production approved | Action |
 |---|---|---|---|---|
-| Parkway photographic library | Reference repository, path unavailable | Not used | No | Inventory dimensions, subject, provenance and rights when access is restored |
-| Animated laser artwork | New code-native SVG/CSS in this repository | Homepage hero | Design approval required | Replace/supplement with approved factory photography if supplied |
+| Parkway photographic library | `public/images/` | Hero, services, sectors and representative gallery | No | Confirm provenance, rights and final captions before launch |
+| Animated laser artwork | New code-native SVG/CSS layered over `hero-nextgen.webp` | Homepage hero | Design approval required | Review the combined photograph and animation in-browser |
 | Social share graphic | New `public/og-image.svg` | Preview metadata | No | Export approved 1200×630 photographic WebP/JPG before launch |
 | PF favicon | New `public/favicon.svg` | Browser icon | No | Replace when Parkway supplies approved brand master |
 
-When access is restored, record every candidate file, pixel dimensions, format, size, duplicates, visual quality, rights, accurate subject/process, proposed placement, alt text and approval status. Prefer authentic Parkway machinery and completed work over generated imagery.
+Before publication, confirm each candidate file's provenance, rights, accurate subject/process, proposed placement and alt text. Prefer authentic Parkway machinery and completed work over generated imagery.
 
 ## Production image-slot specification
 
-Every slot is currently a labelled, layout-stable placeholder. Supply original-resolution files; the production image pipeline should generate AVIF and WebP `srcset` variants at approximately 640, 960, 1280, 1600 and 2200 pixels wide, retain a quality JPEG fallback, and set intrinsic dimensions to prevent layout shift.
+The supplied reference assets are now connected to their labelled, layout-stable slots with intrinsic dimensions. A future production image pipeline may additionally generate responsive AVIF and WebP `srcset` variants while retaining suitable fallbacks.
 
 | Slot key | Intended subject | Orientation / target dimensions | Aspect ratio | Responsive treatment | Alt-text intent |
 |---|---|---|---|---|---|
@@ -38,19 +38,19 @@ Photography must be colour-corrected consistently, retain natural steel tones, a
 
 ## Audited reference mapping
 
-The source repository is still unavailable in this execution environment: it is not mounted, and a read-only GitHub clone attempt returned `CONNECT tunnel failed, response 403`. The implementation now contains the complete import manifest, runtime `<picture>/<img>` integration and `npm run import:assets -- /path/to/assets` importer. It copies without modifying the source, detects the real JPEG/WebP dimensions for CLS-safe markup, and writes `public/images/manifest.json`. Until the source files are supplied, the honest labelled placeholders remain visible rather than broken images.
+The supplied files have been imported into `public/images/`, and `manifest.json` records their real dimensions for CLS-safe markup. Runtime `<picture>/<img>` integration uses eager, high-priority loading only for the LCP hero image and lazy loading for imagery below the fold.
 
 | Source filename | Destination | Page / section | Status | Alt-text intent |
 |---|---|---|---|---|
-| `hero-nextgen.webp` | `public/images/hero-nextgen.webp` | Homepage animated laser stage; eager, high priority and preloaded when present | Reference/demo; source file not available to copy | Describe the visible fibre-laser manufacturing scene without claiming a customer project |
-| `hero-laser.jpg` | `public/images/hero-laser.jpg` | Homepage supporting image band | Reference/demo; source file not available to copy | Describe the visible cutting head and sheet-metal process |
-| `product-laser.webp` | `public/images/product-laser.webp` | Laser cutting service hero | Reference/demo; source file not available to copy | Describe the actual profiling operation visible |
-| `product-folding.webp` | `public/images/product-folding.webp` | CNC folding service hero | Reference/demo; source file not available to copy | Describe press-brake forming without adding unverified capacity |
-| `product-welding.webp` | `public/images/product-welding.webp` | Welding service hero | Reference/demo; source file not available to copy | Describe the visible process only; name MIG/TIG only after verification |
-| `product-bespoke.webp` | `public/images/product-bespoke.webp` | Metal and bespoke fabrication service heroes | Reference/demo; source file not available to copy | Describe the visible assembly without inventing its client or use |
-| `product-perforated.webp` | `public/images/product-perforated.webp` | Perforated metal service hero | Reference/demo; source file not available to copy | Describe visible aperture pattern and component form |
-| `product-granulator.webp` | `public/images/product-granulator.webp` | Granulator screens service hero | Reference/demo; source file not available to copy | Describe visible curvature, perforation and edges |
-| `industry-manufacturing.webp` | `public/images/industry-manufacturing.webp` | Homepage image band and industry gallery | Reference/demo; source file not available to copy | Representative manufacturing environment |
+| `hero-nextgen.webp` | `public/images/hero-nextgen.webp` | Homepage animated laser stage; eager, high priority and preloaded when present | Reference/demo; supplied on this branch | Describe the visible fibre-laser manufacturing scene without claiming a customer project |
+| `hero-laser.jpg` | `public/images/hero-laser.jpg` | Homepage supporting image band | Reference/demo; supplied on this branch | Describe the visible cutting head and sheet-metal process |
+| `product-laser.webp` | `public/images/product-laser.webp` | Laser cutting service hero | Reference/demo; supplied on this branch | Describe the actual profiling operation visible |
+| `product-folding.webp` | `public/images/product-folding.webp` | CNC folding service hero | Reference/demo; supplied on this branch | Describe press-brake forming without adding unverified capacity |
+| `product-welding.webp` | `public/images/product-welding.webp` | Welding service hero | Reference/demo; supplied on this branch | Describe the visible process only; name MIG/TIG only after verification |
+| `product-bespoke.webp` | `public/images/product-bespoke.webp` | Metal and bespoke fabrication service heroes | Reference/demo; supplied on this branch | Describe the visible assembly without inventing its client or use |
+| `product-perforated.webp` | `public/images/product-perforated.webp` | Perforated metal service hero | Reference/demo; supplied on this branch | Describe visible aperture pattern and component form |
+| `product-granulator.webp` | `public/images/product-granulator.webp` | Granulator screens service hero | Reference/demo; supplied on this branch | Describe visible curvature, perforation and edges |
+| `industry-manufacturing.webp` | `public/images/industry-manufacturing.webp` | Homepage image band and industry gallery | Reference/demo; supplied on this branch | Representative manufacturing environment |
 | `industry-recycling.webp` | `public/images/industry-recycling.webp` | Homepage industry gallery | Reference/demo; sector remains unverified | Representative recycling application without asserting Parkway sector work |
 | `industry-construction.webp` | `public/images/industry-construction.webp` | Homepage industry gallery | Reference/demo; sector remains unverified | Representative construction application without certification claims |
 | `industry-transport.webp` | `public/images/industry-transport.webp` | Homepage industry gallery | Reference/demo; sector remains unverified | Representative transport equipment/component context |
@@ -62,6 +62,4 @@ The source repository is still unavailable in this execution environment: it is 
 | `project-screens.jpg` | `public/images/project-screens.jpg` | Representative projects gallery | Reference/demo; not attributed to a customer | Describe visible screen components |
 | `project-stairs.jpg` | `public/images/project-stairs.jpg` | Representative projects gallery | Reference/demo; not attributed to a customer | Describe visible stair fabrication |
 | `project-structural.jpg` | `public/images/project-structural.jpg` | Representative projects gallery | Reference/demo; no structural compliance claim | Describe visible structural-style fabrication only |
-| `bespoke-stairs.jpg` | `public/images/bespoke-stairs.jpg` | Representative projects gallery | Reference/demo; not attributed to a customer | Describe visible bespoke stair fabrication |
-
 `industry-oilgas.webp` is deliberately excluded from the import manifest and all rendered pages because Parkway’s work in that sector has not been verified. The older `cap-*.jpg` and `sector-*.jpg` files are also excluded.

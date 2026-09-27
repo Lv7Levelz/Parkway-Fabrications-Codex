@@ -21,8 +21,7 @@ export const imageAssets = {
   'project-industrial': { file:'project-industrial.jpg', alt:'Representative industrial metal fabrication' },
   'project-screens': { file:'project-screens.jpg', alt:'Representative perforated industrial screen components' },
   'project-stairs': { file:'project-stairs.jpg', alt:'Representative fabricated metal stair assembly' },
-  'project-structural': { file:'project-structural.jpg', alt:'Representative structural-style metal fabrication' },
-  'bespoke-stairs': { file:'bespoke-stairs.jpg', alt:'Representative bespoke metal stair fabrication' }
+  'project-structural': { file:'project-structural.jpg', alt:'Representative structural-style metal fabrication' }
 };
 
 function importedManifest() {

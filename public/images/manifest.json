@@ -1,0 +1,82 @@
+{
+  "hero-nextgen.webp": {
+    "width": 1672,
+    "height": 941
+  },
+  "hero-laser.jpg": {
+    "height": 244,
+    "width": 441
+  },
+  "product-laser.webp": {
+    "width": 1448,
+    "height": 1086
+  },
+  "product-folding.webp": {
+    "width": 1448,
+    "height": 1086
+  },
+  "product-welding.webp": {
+    "width": 1448,
+    "height": 1086
+  },
+  "product-bespoke.webp": {
+    "width": 1448,
+    "height": 1086
+  },
+  "product-perforated.webp": {
+    "width": 1448,
+    "height": 1086
+  },
+  "product-granulator.webp": {
+    "width": 1448,
+    "height": 1086
+  },
+  "industry-manufacturing.webp": {
+    "width": 1448,
+    "height": 1086
+  },
+  "industry-recycling.webp": {
+    "width": 1448,
+    "height": 1086
+  },
+  "industry-construction.webp": {
+    "width": 1448,
+    "height": 1086
+  },
+  "industry-transport.webp": {
+    "width": 1448,
+    "height": 1086
+  },
+  "industry-agriculture.webp": {
+    "width": 1448,
+    "height": 1086
+  },
+  "industry-architectural.webp": {
+    "width": 1448,
+    "height": 1086
+  },
+  "project-cages.jpg": {
+    "height": 92,
+    "width": 119
+  },
+  "project-components.jpg": {
+    "height": 92,
+    "width": 119
+  },
+  "project-industrial.jpg": {
+    "height": 92,
+    "width": 119
+  },
+  "project-screens.jpg": {
+    "height": 92,
+    "width": 118
+  },
+  "project-stairs.jpg": {
+    "height": 92,
+    "width": 119
+  },
+  "project-structural.jpg": {
+    "height": 92,
+    "width": 120
+  }
+}
