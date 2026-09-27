@@ -7,7 +7,8 @@
     "dev": "node --watch server.js",
     "start": "node server.js",
     "test": "node --test",
-    "check": "find server.js src public -name '*.js' -type f -print0 | xargs -0 -n1 node --check"
+    "check": "find server.js src public scripts -name '*.js' -type f -print0 | xargs -0 -n1 node --check",
+    "import:assets": "node scripts/import-reference-assets.js"
   },
   "engines": { "node": ">=22" }
 }

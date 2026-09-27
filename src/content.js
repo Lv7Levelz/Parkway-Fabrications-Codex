@@ -85,7 +85,7 @@ export const services = {
     slug: 'bespoke-fabrication', eyebrow: 'Made to project requirements', title: 'Bespoke Metal Fabrication Sheffield', shortTitle: 'Bespoke fabrication',
     description: 'Custom metalwork in Sheffield developed from buyer-supplied drawings, with connected cutting, folding and welding services.',
     intro: 'Bespoke work starts with a controlled brief. Parkway reviews geometry, materials, quantities, interfaces, finish and delivery needs before proposing the sequence.',
-    imageKey: 'finished-projects', imageLabel: 'Approved Parkway finished fabrication photography',
+    imageKey: 'bespoke-fabrication', imageLabel: 'Approved Parkway bespoke fabrication photography',
     stages: ['Brief and drawing', 'Manufacturing review', 'Cut and form', 'Fabricate and inspect', 'Finish and delivery'],
     procurement: [['Define function and interfaces', 'Explain what the fabrication must do and how it connects to surrounding equipment or structures.'], ['Separate critical from indicative', 'Identify the dimensions, surfaces and features that govern fit or performance.'], ['Supply an approval basis', 'Use controlled drawings and agree what constitutes acceptance before manufacture.']],
     applications: ['Custom brackets and supports', 'Guards and enclosures', 'Fabricated assemblies', 'Replacement components', 'Drawing-led industrial metalwork'],
