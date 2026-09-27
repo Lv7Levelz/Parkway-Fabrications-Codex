@@ -1,0 +1,13 @@
+{
+  "name": "parkway-fabrications",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch server.js",
+    "start": "node server.js",
+    "test": "node --test",
+    "check": "node --check server.js && node --check public/site.js"
+  },
+  "engines": { "node": ">=22" }
+}
