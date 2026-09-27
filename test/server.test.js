@@ -45,6 +45,22 @@ test('preview routes are noindex, linked and semantic; admin is protected', asyn
   assert.equal(admin.status, 303);
   assert.equal(admin.headers.get('location'), '/admin/login/');
 });
+test('real imagery is integrated with intrinsic dimensions and safe loading priorities', async t => {
+  if (!server.listening) await new Promise(resolve => server.listen(0, resolve));
+  t.after(() => { if (server.listening) server.close(); });
+  const base = `http://127.0.0.1:${server.address().port}`;
+  const home = await fetch(base + '/').then(response => response.text());
+  assert.match(home, /<link rel="preload" as="image" href="\/images\/hero-nextgen\.webp" fetchpriority="high">/);
+  assert.match(home, /src="\/images\/hero-nextgen\.webp" width="1672" height="941"[^>]+loading="eager"[^>]+fetchpriority="high"/);
+  assert.match(home, /src="\/images\/hero-laser\.jpg" width="441" height="244"[^>]+loading="lazy"/);
+  assert.doesNotMatch(home, /oilgas|oil and gas|oil-and-gas/i);
+
+  const laser = await fetch(base + '/laser-cutting/').then(response => response.text());
+  assert.match(laser, /src="\/images\/product-laser\.webp" width="1448" height="1086"[^>]+loading="lazy"/);
+  const projects = await fetch(base + '/projects/').then(response => response.text());
+  assert.match(projects, /src="\/images\/project-structural\.jpg" width="120" height="92"[^>]+loading="lazy"/);
+  assert.doesNotMatch(projects, /data-image-slot/);
+});
 test('RFQ endpoint rejects disallowed executable upload', async t => {
   if (!server.listening) await new Promise(resolve => server.listen(0, resolve));
   t.after(() => { if (server.listening) server.close(); });
