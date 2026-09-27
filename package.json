@@ -7,7 +7,7 @@
     "dev": "node --watch server.js",
     "start": "node server.js",
     "test": "node --test",
-    "check": "node --check server.js && node --check public/site.js"
+    "check": "find server.js src public -name '*.js' -type f -print0 | xargs -0 -n1 node --check"
   },
   "engines": { "node": ">=22" }
 }
